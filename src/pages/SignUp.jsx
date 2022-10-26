@@ -6,10 +6,11 @@ import OAuth from "../components/OAuth";
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
   });
-  const {email, password} = formData;
+  const {name, email, password} = formData;
   function onChange(e) {
     setFormData((prevState) => ({
       ...prevState,
@@ -25,6 +26,7 @@ export default function SignUp() {
         </div>
         <div className="w-full md:w-[67%] lg:w-[40%] ml-20">
           <form>
+            <input className="mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out" type="text" id="name" value={name} onChange={onChange} placeholder="Full name"/>
             <input className="mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out" type="email" id="email" value={email} onChange={onChange} placeholder="Email address"/>
             <div className="relative mb-6">
               <input className="w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out" type={showPassword ? "text" : "password"} id="password" value={password} onChange={onChange} placeholder="Password"/>
@@ -35,8 +37,8 @@ export default function SignUp() {
               )}
             </div>
             <div className="flex justify-between whitespace-nowrap text-sm sm:text-lg">
-              <p className="mb-6">Don't have a account?
-                <Link to="/sign-up" className="text-red-600 hover:text-red-700 transition duration-200 ease-in-out ml-1">Register</Link>
+              <p className="mb-6">Have a account?
+                <Link to="/sign-in" className="text-red-600 hover:text-red-700 transition duration-200 ease-in-out ml-1">Sign in</Link>
               </p>
               <p>
                 <Link to="/forgot-password" className="text-blue-600 hover:text-blue-800 transition duration-200 ease-in-out">Forgot password?</Link>
