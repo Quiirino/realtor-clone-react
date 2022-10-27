@@ -29,9 +29,9 @@ export default function SignIn() {
             <div className="relative mb-6">
               <input className="w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out" type={showPassword ? "text" : "password"} id="password" value={password} onChange={onChange} placeholder="Password"/>
               {showPassword ? (
-                <AiFillEye className="absolute right-3 top-3 text-xl cursor-pointer" onClick={() => setShowPassword((prevState) => !prevState)}/>
-              ) : (
                 <AiFillEyeInvisible className="absolute right-3 top-3 text-xl cursor-pointer" onClick={() => setShowPassword((prevState) => !prevState)}/>
+              ) : (
+                <AiFillEye className="absolute right-3 top-3 text-xl cursor-pointer" onClick={() => setShowPassword((prevState) => !prevState)}/>
               )}
             </div>
             <div className="flex justify-between whitespace-nowrap text-sm sm:text-lg">
